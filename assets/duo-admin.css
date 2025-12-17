@@ -1,0 +1,317 @@
+.duo-admin {
+  --duo-text: #3c3c3c;
+  --duo-muted: #999999;
+  --duo-muted-2: #afafaf;
+  --duo-border: #e5e5e5;
+  --duo-blue: #1cb0f6;
+  --duo-danger: #ff4b4b;
+  --duo-bg: #ffffff;
+  --duo-radius: 16px;
+}
+
+.duo-admin .duo-layout {
+  display: grid;
+  grid-template-columns: 368px 1fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1040px;
+}
+
+.duo-admin .duo-card,
+.duo-admin .duo-panel,
+.duo-admin .duo-danger {
+  background: var(--duo-bg);
+  border: 2px solid var(--duo-border);
+  border-radius: var(--duo-radius);
+}
+
+.duo-admin .duo-menu-card {
+  padding: 26px;
+}
+
+.duo-admin .duo-user {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.duo-admin .duo-user__avatar img {
+  border-radius: 999px;
+}
+
+.duo-admin .duo-user__username {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--duo-text);
+  line-height: 1.2;
+}
+
+.duo-admin .duo-link {
+  text-decoration: none;
+}
+
+.duo-admin .duo-link--primary {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--duo-blue);
+}
+
+.duo-admin .duo-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.duo-admin .duo-nav__item {
+  display: block;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: var(--duo-text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.duo-admin .duo-nav__item:hover {
+  background: #f6f7f8;
+}
+
+.duo-admin .duo-title {
+  margin: 0 0 16px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--duo-text);
+}
+
+.duo-admin .duo-panel {
+  overflow: hidden;
+}
+
+.duo-admin .duo-panel__row {
+  padding: 16px;
+  border-top: 2px solid var(--duo-border);
+}
+
+.duo-admin .duo-panel__row:first-child {
+  border-top: 0;
+}
+
+.duo-admin .duo-panel__row--picture {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 20px;
+  align-items: start;
+}
+
+.duo-admin .duo-panel__media {
+  height: 120px;
+  border-radius: 999px;
+  border: 2px solid var(--duo-border);
+  background: #fafafa;
+}
+
+.duo-admin .duo-label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4b4b4b;
+}
+
+.duo-admin .duo-field {
+  display: block;
+}
+
+.duo-admin .duo-input {
+  width: 100%;
+  max-width: 420px;
+  border: 2px solid var(--duo-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #fff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  color: var(--duo-text);
+}
+
+.duo-admin .duo-input:disabled {
+  background: #f6f7f8;
+  color: var(--duo-muted);
+}
+
+.duo-admin .duo-help {
+  margin-top: 6px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--duo-muted);
+}
+
+.duo-admin .duo-help--inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+.duo-admin .duo-file {
+  display: flex;
+  align-items: center;
+}
+
+.duo-admin .duo-file__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.duo-admin .duo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--duo-radius);
+  border: 2px solid var(--duo-border);
+  padding: 12px 18px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.duo-admin .duo-button--ghost {
+  background: #fff;
+  color: var(--duo-blue);
+  box-shadow: 0 2px 0 0 var(--duo-border);
+}
+
+.duo-admin .duo-button--primary {
+  background: var(--duo-blue);
+  border-color: var(--duo-blue);
+  color: #fff;
+  box-shadow: 0 2px 0 0 #0d8ed0;
+}
+
+.duo-admin .duo-actions {
+  margin-top: 22px;
+}
+
+.duo-admin .duo-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.duo-admin .duo-toggle__label {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--duo-text);
+}
+
+.duo-admin .duo-toggle input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.duo-admin .duo-toggle__ui {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--duo-border);
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.duo-admin .duo-toggle__ui::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid var(--duo-border);
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.duo-admin .duo-toggle input:checked + .duo-toggle__ui {
+  background: #b9e9ff;
+}
+
+.duo-admin .duo-toggle input:checked + .duo-toggle__ui::after {
+  transform: translateX(20px);
+  border-color: var(--duo-blue);
+}
+
+.duo-admin .duo-danger {
+  margin-top: 22px;
+  padding: 12px 0;
+}
+
+.duo-admin .duo-danger__link {
+  display: block;
+  padding: 13px 16px;
+  color: var(--duo-muted-2);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.duo-admin .duo-danger__link--danger {
+  color: var(--duo-danger);
+}
+
+.duo-admin .duo-footer {
+  margin-top: 26px;
+  color: var(--duo-muted-2);
+}
+
+.duo-admin .duo-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.duo-admin .duo-footer__link,
+.duo-admin .duo-footer__text {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--duo-muted-2);
+  text-decoration: none;
+}
+
+.duo-admin .duo-footer__meta {
+  margin-top: 14px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (max-width: 1100px) {
+  .duo-admin .duo-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .duo-admin .duo-panel__row--picture {
+    grid-template-columns: 1fr;
+  }
+}
