@@ -11,10 +11,18 @@
 
 .duo-admin .duo-layout {
   display: grid;
-  grid-template-columns: 368px 1fr;
+  grid-template-columns: 592px 368px;
   gap: 40px;
   align-items: start;
-  max-width: 1040px;
+  max-width: 1000px;
+}
+
+.duo-admin .duo-content {
+  grid-column: 1;
+}
+
+.duo-admin .duo-menu {
+  grid-column: 2;
 }
 
 .duo-admin .duo-card,
@@ -34,7 +42,14 @@
   grid-template-columns: 40px 1fr;
   gap: 12px;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 25px;
+}
+
+.duo-admin .duo-user__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .duo-admin .duo-user__avatar img {
@@ -107,6 +122,7 @@
   grid-template-columns: 1fr 160px;
   gap: 20px;
   align-items: start;
+  padding: 12px 16px 20px;
 }
 
 .duo-admin .duo-panel__media {
@@ -129,20 +145,61 @@
   display: block;
 }
 
+.duo-admin .duo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.duo-admin .duo-row--with-note {
+  flex-wrap: wrap;
+}
+
+.duo-admin .duo-row__input {
+  width: 380px;
+  max-width: 100%;
+}
+
+.duo-admin .duo-row__label {
+  flex: 1;
+  text-align: right;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4b4b4b;
+}
+
+.duo-admin .duo-row__label--lg {
+  font-size: 14px;
+}
+
+.duo-admin .duo-row__note {
+  flex: 0 0 100%;
+  text-align: right;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--duo-danger);
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
 .duo-admin .duo-input {
   width: 100%;
-  max-width: 420px;
   border: 2px solid var(--duo-border);
-  border-radius: 12px;
-  padding: 10px 12px;
-  background: #fff;
+  border-radius: var(--duo-radius);
+  padding: 12px;
+  background: #f7f7f7;
+  min-height: 48px;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  font-size: 14px;
-  color: var(--duo-text);
+  font-size: 17px;
+  font-weight: 400;
+  color: #4b4b4b;
 }
 
 .duo-admin .duo-input:disabled {
-  background: #f6f7f8;
+  background: #f7f7f7;
   color: var(--duo-muted);
 }
 
@@ -152,6 +209,10 @@
   font-size: 13px;
   font-weight: 500;
   color: var(--duo-muted);
+}
+
+.duo-admin .duo-help--lg {
+  font-size: 15px;
 }
 
 .duo-admin .duo-help--inline {
@@ -188,6 +249,8 @@
 }
 
 .duo-admin .duo-button--ghost {
+  min-height: 50px;
+  padding: 15px 20px 17px 18px;
   background: #fff;
   color: var(--duo-blue);
   box-shadow: 0 2px 0 0 var(--duo-border);
@@ -200,22 +263,37 @@
   box-shadow: 0 2px 0 0 #0d8ed0;
 }
 
+.duo-admin .duo-button--muted {
+  min-width: 146px;
+  min-height: 50px;
+  padding: 14px 17px 18px;
+  background: var(--duo-border);
+  border: 0;
+  color: var(--duo-muted-2);
+  box-shadow: none;
+}
+
 .duo-admin .duo-actions {
+  margin-top: 22px;
+}
+
+.duo-admin .duo-menu-actions {
   margin-top: 22px;
 }
 
 .duo-admin .duo-toggle {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 40px;
 }
 
 .duo-admin .duo-toggle__label {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--duo-text);
+  text-align: right;
 }
 
 .duo-admin .duo-toggle input {
@@ -229,9 +307,9 @@
 }
 
 .duo-admin .duo-toggle__ui {
-  width: 44px;
+  width: 57px;
   height: 24px;
-  border-radius: 999px;
+  border-radius: 12px;
   background: var(--duo-border);
   position: relative;
   flex: 0 0 auto;
@@ -239,14 +317,14 @@
 
 .duo-admin .duo-toggle__ui::after {
   content: "";
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 999px;
   background: #fff;
   border: 2px solid var(--duo-border);
   position: absolute;
-  top: 1px;
-  left: 1px;
+  top: 0;
+  left: 0;
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
@@ -255,18 +333,22 @@
 }
 
 .duo-admin .duo-toggle input:checked + .duo-toggle__ui::after {
-  transform: translateX(20px);
+  transform: translateX(33px);
   border-color: var(--duo-blue);
+}
+
+.duo-admin .duo-panel__row--toggle {
+  padding: 22px 36px 20px;
 }
 
 .duo-admin .duo-danger {
   margin-top: 22px;
-  padding: 12px 0;
+  padding: 0;
 }
 
 .duo-admin .duo-danger__link {
   display: block;
-  padding: 13px 16px;
+  padding: 13px 16px 12px 196px;
   color: var(--duo-muted-2);
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   font-size: 13px;
@@ -311,7 +393,30 @@
     gap: 22px;
   }
 
+  .duo-admin .duo-content,
+  .duo-admin .duo-menu {
+    grid-column: auto;
+  }
+
   .duo-admin .duo-panel__row--picture {
     grid-template-columns: 1fr;
+  }
+
+  .duo-admin .duo-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .duo-admin .duo-row__input {
+    width: 100%;
+  }
+
+  .duo-admin .duo-row__label,
+  .duo-admin .duo-row__note {
+    text-align: left;
+  }
+
+  .duo-admin .duo-danger__link {
+    padding-left: 16px;
   }
 }

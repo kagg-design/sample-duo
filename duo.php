@@ -137,86 +137,70 @@ function duo_render_admin_page() {
     ?>
     <div class="wrap duo-admin">
         <div class="duo-layout">
-            <aside class="duo-menu" aria-label="<?php echo esc_attr__( 'Settings menu', 'duo' ); ?>">
-                <div class="duo-card duo-menu-card">
-                    <div class="duo-user">
-                        <div class="duo-user__avatar">
-                            <?php echo get_avatar( $user->ID, 40 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                        </div>
-                        <div class="duo-user__meta">
-                            <div class="duo-user__username"><?php echo esc_html( $username ); ?></div>
-                            <a class="duo-link duo-link--primary" href="<?php echo esc_url( $view_profile_url ); ?>">
-                                <?php echo esc_html__( 'View your profile', 'duo' ); ?>
-                            </a>
-                        </div>
-                    </div>
-
-                    <nav class="duo-nav" aria-label="<?php echo esc_attr__( 'Account sections', 'duo' ); ?>">
-                        <a class="duo-nav__item" href="#duo-privacy"><?php echo esc_html__( 'Privacy', 'duo' ); ?></a>
-                        <a class="duo-nav__item" href="#duo-schools"><?php echo esc_html__( 'Duolingo for Schools', 'duo' ); ?></a>
-                        <a class="duo-nav__item" href="#duo-super"><?php echo esc_html__( 'Super Duolingo', 'duo' ); ?></a>
-                        <a class="duo-nav__item" href="#duo-password"><?php echo esc_html__( 'Password', 'duo' ); ?></a>
-                        <a class="duo-nav__item" href="#duo-courses"><?php echo esc_html__( 'Manage Courses', 'duo' ); ?></a>
-                        <a class="duo-nav__item" href="#duo-leaderboards"><?php echo esc_html__( 'Leaderboards', 'duo' ); ?></a>
-                        <a class="duo-nav__item" href="#duo-notifications"><?php echo esc_html__( 'Notifications', 'duo' ); ?></a>
-                        <a class="duo-nav__item" href="#duo-profile"><?php echo esc_html__( 'Profile', 'duo' ); ?></a>
-                        <a class="duo-nav__item" href="#duo-more"><?php echo esc_html__( 'More', 'duo' ); ?></a>
-                    </nav>
-                </div>
-            </aside>
-
             <main class="duo-content" aria-label="<?php echo esc_attr__( 'Account settings', 'duo' ); ?>">
                 <h1 class="duo-title"><?php echo esc_html__( 'Account', 'duo' ); ?></h1>
 
-                <form class="duo-form" method="post" action="<?php echo esc_url( $form_action ); ?>" enctype="multipart/form-data">
+                <form id="duo-settings-form" class="duo-form" method="post" action="<?php echo esc_url( $form_action ); ?>" enctype="multipart/form-data">
                     <?php settings_fields( 'duo_settings' ); ?>
 
                     <div class="duo-panel" id="duo-profile">
                         <div class="duo-panel__row duo-panel__row--picture">
-                            <div class="duo-panel__body">
-                                <div class="duo-label"><?php echo esc_html__( 'Profile picture', 'duo' ); ?></div>
-                                <div class="duo-file">
-                                    <label class="duo-button duo-button--ghost" for="duo-profile-picture">
-                                        <?php echo esc_html__( 'Choose file', 'duo' ); ?>
-                                    </label>
-                                    <input class="duo-file__input" type="file" id="duo-profile-picture" name="duo_profile_picture" accept="image/*" />
-                                    <div class="duo-help duo-help--inline"><?php echo esc_html__( 'no file selected', 'duo' ); ?></div>
+                            <div class="duo-row">
+                                <div class="duo-row__input">
+                                    <div class="duo-file">
+                                        <label class="duo-button duo-button--ghost" for="duo-profile-picture">
+                                            <?php echo esc_html__( 'Choose file', 'duo' ); ?>
+                                        </label>
+                                        <input class="duo-file__input" type="file" id="duo-profile-picture" name="duo_profile_picture" accept="image/*" />
+                                        <div class="duo-help duo-help--inline"><?php echo esc_html__( 'no file selected', 'duo' ); ?></div>
+                                    </div>
+                                    <div class="duo-help duo-help--lg"><?php echo esc_html__( 'maximum image size is 1 MB', 'duo' ); ?></div>
                                 </div>
-                                <div class="duo-help"><?php echo esc_html__( 'maximum image size is 1 MB', 'duo' ); ?></div>
-                            </div>
-                            <div class="duo-panel__media" aria-hidden="true"></div>
-                        </div>
 
-                        <div class="duo-panel__row">
-                            <label class="duo-field">
-                                <span class="duo-label"><?php echo esc_html__( 'Name', 'duo' ); ?></span>
-                                <input class="duo-input" type="text" name="duo_user_settings[name]" value="<?php echo esc_attr( $name ); ?>" />
-                            </label>
-                        </div>
-
-                        <div class="duo-panel__row">
-                            <div class="duo-field">
-                                <span class="duo-label"><?php echo esc_html__( 'Username', 'duo' ); ?></span>
-                                <input class="duo-input" type="text" value="<?php echo esc_attr( $username ); ?>" disabled />
+                                <div class="duo-row__label"><?php echo esc_html__( 'Profile picture', 'duo' ); ?></div>
                             </div>
                         </div>
 
                         <div class="duo-panel__row">
-                            <label class="duo-field">
-                                <span class="duo-label"><?php echo esc_html__( 'Email', 'duo' ); ?></span>
-                                <input class="duo-input" type="email" name="duo_user_settings[email]" value="<?php echo esc_attr( $email ); ?>" />
-                                <div class="duo-help duo-help--link">
-                                    <a class="duo-link duo-link--primary" href="#duo-verify-email">
-                                        <?php echo esc_html__( 'Email not verified. Verify now', 'duo' ); ?>
-                                    </a>
+                            <div class="duo-row">
+                                <div class="duo-row__input">
+                                    <label class="screen-reader-text" for="duo-name"><?php echo esc_html__( 'Name', 'duo' ); ?></label>
+                                    <input class="duo-input" type="text" id="duo-name" name="duo_user_settings[name]" value="<?php echo esc_attr( $name ); ?>" />
                                 </div>
-                            </label>
+                                <div class="duo-row__label"><?php echo esc_html__( 'Name', 'duo' ); ?></div>
+                            </div>
+                        </div>
+
+                        <div class="duo-panel__row">
+                            <div class="duo-row">
+                                <div class="duo-row__input">
+                                    <label class="screen-reader-text" for="duo-username"><?php echo esc_html__( 'Username', 'duo' ); ?></label>
+                                    <input class="duo-input" type="text" id="duo-username" value="<?php echo esc_attr( $username ); ?>" disabled />
+                                </div>
+                                <div class="duo-row__label"><?php echo esc_html__( 'Username', 'duo' ); ?></div>
+                            </div>
+                        </div>
+
+                        <div class="duo-panel__row">
+                            <div class="duo-row duo-row--with-note">
+                                <a class="duo-row__note" href="#duo-verify-email">
+                                    <?php echo esc_html__( 'Email not verified. Verify now', 'duo' ); ?>
+                                </a>
+                                <div class="duo-row__input">
+                                    <label class="screen-reader-text" for="duo-email"><?php echo esc_html__( 'Email', 'duo' ); ?></label>
+                                    <input class="duo-input" type="email" id="duo-email" name="duo_user_settings[email]" value="<?php echo esc_attr( $email ); ?>" />
+                                </div>
+                                <div class="duo-row__label duo-row__label--lg"><?php echo esc_html__( 'Email', 'duo' ); ?></div>
+                            </div>
                         </div>
 
                         <div class="duo-panel__row" id="duo-password">
-                            <div class="duo-field">
-                                <span class="duo-label"><?php echo esc_html__( 'Password', 'duo' ); ?></span>
-                                <input class="duo-input" type="password" value="********" disabled />
+                            <div class="duo-row">
+                                <div class="duo-row__input">
+                                    <label class="screen-reader-text" for="duo-password-input"><?php echo esc_html__( 'Password', 'duo' ); ?></label>
+                                    <input class="duo-input" type="password" id="duo-password-input" value="********" disabled />
+                                </div>
+                                <div class="duo-row__label"><?php echo esc_html__( 'Password', 'duo' ); ?></div>
                             </div>
                         </div>
                     </div>
@@ -275,12 +259,6 @@ function duo_render_admin_page() {
                             </label>
                         </div>
                     </div>
-
-                    <div class="duo-actions">
-                        <button type="submit" class="duo-button duo-button--primary">
-                            <?php echo esc_html__( 'Save changes', 'duo' ); ?>
-                        </button>
-                    </div>
                 </form>
 
                 <div class="duo-danger" id="duo-privacy">
@@ -306,6 +284,40 @@ function duo_render_admin_page() {
                     </div>
                 </footer>
             </main>
+
+            <aside class="duo-menu" id="duo-menu" aria-label="<?php echo esc_attr__( 'Settings menu', 'duo' ); ?>">
+                <div class="duo-card duo-menu-card">
+                    <div class="duo-user">
+                        <div class="duo-user__avatar">
+                            <?php echo get_avatar( $user->ID, 40 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                        </div>
+                        <div class="duo-user__meta">
+                            <div class="duo-user__username"><?php echo esc_html( $username ); ?></div>
+                            <a class="duo-link duo-link--primary" href="<?php echo esc_url( $view_profile_url ); ?>">
+                                <?php echo esc_html__( 'View your profile', 'duo' ); ?>
+                            </a>
+                        </div>
+                    </div>
+
+                    <nav class="duo-nav" aria-label="<?php echo esc_attr__( 'Account sections', 'duo' ); ?>">
+                        <a class="duo-nav__item" href="#duo-privacy"><?php echo esc_html__( 'Privacy', 'duo' ); ?></a>
+                        <a class="duo-nav__item" href="#duo-schools"><?php echo esc_html__( 'Duolingo for Schools', 'duo' ); ?></a>
+                        <a class="duo-nav__item" href="#duo-super"><?php echo esc_html__( 'Super Duolingo', 'duo' ); ?></a>
+                        <a class="duo-nav__item" href="#duo-password"><?php echo esc_html__( 'Password', 'duo' ); ?></a>
+                        <a class="duo-nav__item" href="#duo-courses"><?php echo esc_html__( 'Manage Courses', 'duo' ); ?></a>
+                        <a class="duo-nav__item" href="#duo-leaderboards"><?php echo esc_html__( 'Leaderboards', 'duo' ); ?></a>
+                        <a class="duo-nav__item" href="#duo-notifications"><?php echo esc_html__( 'Notifications', 'duo' ); ?></a>
+                        <a class="duo-nav__item" href="#duo-profile"><?php echo esc_html__( 'Profile', 'duo' ); ?></a>
+                        <a class="duo-nav__item" href="#duo-more"><?php echo esc_html__( 'More', 'duo' ); ?></a>
+                    </nav>
+
+                    <div class="duo-menu-actions">
+                        <button type="submit" form="duo-settings-form" class="duo-button duo-button--muted">
+                            <?php echo esc_html__( 'Save changes', 'duo' ); ?>
+                        </button>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
     <?php
