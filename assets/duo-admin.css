@@ -321,6 +321,7 @@
   background: #fff;
   color: var(--duo-blue);
   box-shadow: 0 2px 0 0 var(--duo-border);
+  text-transform: uppercase;
 }
 
 .duo-admin .duo-button--primary {
@@ -394,23 +395,23 @@
 
 .duo-admin .duo-toggle__ui::after {
   content: "";
-  width: 20px;
+  width: 32px;
   height: 20px;
-  border-radius: 999px;
+  border-radius: 10px;
   background: #fff;
-  border: 2px solid var(--duo-border);
+  border: 1px solid var(--duo-border);
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .duo-admin .duo-toggle input:checked + .duo-toggle__ui {
-  background: #b9e9ff;
+  background: var(--duo-blue);
 }
 
 .duo-admin .duo-toggle input:checked + .duo-toggle__ui::after {
-  transform: translateX(33px);
+  transform: translateX(25px);
   border-color: var(--duo-blue);
 }
 
@@ -431,6 +432,7 @@
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .duo-admin .duo-danger__link--danger {
