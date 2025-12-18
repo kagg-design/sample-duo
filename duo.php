@@ -339,16 +339,16 @@ function duo_render_admin_page() {
 						<a class="duo-nav__item"
 						   href="#duo-schools"><?php echo esc_html__( 'Duolingo for Schools', 'duo' ); ?></a>
 						<a class="duo-nav__item"
-						   href="#duo-super"><?php echo esc_html__( 'Super Duolingo', 'duo' ); ?></a>
-						<a class="duo-nav__item" href="#duo-password"><?php echo esc_html__( 'Password', 'duo' ); ?></a>
-						<a class="duo-nav__item"
-						   href="#duo-courses"><?php echo esc_html__( 'Manage Courses', 'duo' ); ?></a>
-						<a class="duo-nav__item"
-						   href="#duo-leaderboards"><?php echo esc_html__( 'Leaderboards', 'duo' ); ?></a>
+						   href="#duo-edit-goal"><?php echo esc_html__( 'Edit Daily Goal', 'duo' ); ?></a>
 						<a class="duo-nav__item"
 						   href="#duo-notifications"><?php echo esc_html__( 'Notifications', 'duo' ); ?></a>
-						<a class="duo-nav__item" href="#duo-profile"><?php echo esc_html__( 'Profile', 'duo' ); ?></a>
-						<a class="duo-nav__item" href="#duo-more"><?php echo esc_html__( 'More', 'duo' ); ?></a>
+						<a class="duo-nav__item"
+						   href="#duo-super"><?php echo esc_html__( 'Super Duolingo', 'duo' ); ?></a>
+						<a class="duo-nav__item"
+						   href="#duo-password"><?php echo esc_html__( 'Password', 'duo' ); ?></a>
+						<a class="duo-nav__item"
+						   href="#duo-courses"><?php echo esc_html__( 'Manage Courses', 'duo' ); ?></a>
+						<a class="duo-nav__item duo-nav__item-button" href="#duo-account"><?php echo esc_html__( 'Account', 'duo' ); ?></a>
 					</nav>
 				</div>
 			</aside>
