@@ -141,9 +141,11 @@ function duo_render_admin_page() {
 	?>
 	<div class="wrap duo-admin">
 		<div class="duo-layout">
+			<h1 class="duo-title"><?php echo esc_html__( 'Account', 'duo' ); ?></h1>
+			<button type="submit" form="duo-settings-form" class="duo-button duo-button--muted">
+				<?php echo esc_html__( 'Save changes', 'duo' ); ?>
+			</button>
 			<main class="duo-content" aria-label="<?php echo esc_attr__( 'Account settings', 'duo' ); ?>">
-				<h1 class="duo-title"><?php echo esc_html__( 'Account', 'duo' ); ?></h1>
-
 				<form id="duo-settings-form" class="duo-form" method="post"
 					  action="<?php echo esc_url( $form_action ); ?>" enctype="multipart/form-data">
 					<?php settings_fields( 'duo_settings' ); ?>
@@ -348,12 +350,6 @@ function duo_render_admin_page() {
 						<a class="duo-nav__item" href="#duo-profile"><?php echo esc_html__( 'Profile', 'duo' ); ?></a>
 						<a class="duo-nav__item" href="#duo-more"><?php echo esc_html__( 'More', 'duo' ); ?></a>
 					</nav>
-
-					<div class="duo-menu-actions">
-						<button type="submit" form="duo-settings-form" class="duo-button duo-button--muted">
-							<?php echo esc_html__( 'Save changes', 'duo' ); ?>
-						</button>
-					</div>
 				</div>
 			</aside>
 		</div>

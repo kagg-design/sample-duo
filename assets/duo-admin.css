@@ -13,12 +13,20 @@
   --duo-radius: 16px;
 }
 
+.duo-admin .duo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px
+}
+
 .duo-admin .duo-layout {
   display: grid;
   grid-template-columns: 592px 368px;
-  gap: 40px;
+  gap: 20px 40px;
   align-items: start;
   max-width: 1000px;
+  margin-top: 36px;
 }
 
 .duo-admin .duo-content {
@@ -103,7 +111,9 @@
 }
 
 .duo-admin .duo-title {
-  margin: 0 0 16px;
+  margin: 0;
+  padding: 0 22px;
+  align-self: center;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   font-size: 23px;
   font-weight: 700;
@@ -328,6 +338,9 @@
   border: 0;
   color: var(--duo-muted-2);
   box-shadow: none;
+  width: max-content;
+  justify-self: right;
+  align-self: center;
 }
 
 .duo-admin .duo-actions {
