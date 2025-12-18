@@ -22,7 +22,7 @@
 
 .duo-admin .duo-layout {
   display: grid;
-  grid-template-columns: 592px 368px;
+  grid-template-columns: 568px 369px;
   gap: 20px 40px;
   align-items: start;
   max-width: 1000px;
@@ -148,18 +148,18 @@
 .duo-admin .duo-panel__row--picture {
   display: flex;
   flex-direction: row;
+  gap: 20px;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 0;
+  padding: 16px;
 }
 
 .duo-admin .duo-picture-actions {
-  width: 412px;
-  min-height: 138px;
+  width: 380px;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 12px 192px 20px 16px;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -187,10 +187,9 @@
 }
 
 .duo-admin .duo-row__label.duo-picture-label {
-  width: 180px;
   box-sizing: border-box;
   align-self: flex-start;
-  padding-top: 29px;
+  padding-top: 18px;
 }
 
 .duo-admin .duo-picture-max {
@@ -229,7 +228,6 @@
   flex-wrap: wrap;
   width: 380px;
   max-width: 100%;
-  height: 80px;
 }
 
 .duo-admin .duo-row__input {
@@ -253,7 +251,7 @@
 
 .duo-admin .duo-row__note {
   position: absolute;
-  bottom: -18px;
+  bottom: -25px;
   right: 0;
   flex: 0 0 100%;
   text-align: right;
@@ -269,7 +267,6 @@
   width: 100%;
   border: 2px solid var(--duo-border);
   border-radius: var(--duo-radius);
-  padding: 12px;
   background: #f7f7f7;
   min-height: 48px;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -284,7 +281,6 @@
 }
 
 .duo-admin .duo-help {
-  margin-top: 6px;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   font-size: 13px;
   font-weight: 500;
@@ -434,7 +430,7 @@
 }
 
 .duo-admin .duo-danger {
-  margin-top: 22px;
+  margin-top: 13px;
   padding: 0;
 }
 
@@ -454,14 +450,18 @@
 }
 
 .duo-admin .duo-footer {
-  margin-top: 26px;
+  margin-top: 32px;
   color: var(--duo-muted-2);
 }
 
 .duo-admin .duo-footer__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 4px 24px;
+  justify-content: space-around;
+  padding: 0 24px;
+  border-top: 2px solid #e5e5e5;
+  padding-top: 20px;
 }
 
 .duo-admin .duo-footer__link,
@@ -471,6 +471,7 @@
   font-weight: 700;
   color: var(--duo-muted-2);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .duo-admin .duo-footer__meta {

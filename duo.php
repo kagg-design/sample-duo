@@ -213,18 +213,6 @@ function duo_render_admin_page() {
 								</div>
 							</div>
 						</div>
-
-						<div class="duo-panel__row" id="duo-password">
-							<div class="duo-row">
-								<div class="duo-row__label"><?php echo esc_html__( 'Password', 'duo' ); ?></div>
-								<div class="duo-row__input">
-									<label class="screen-reader-text"
-										   for="duo-password-input"><?php echo esc_html__( 'Password', 'duo' ); ?></label>
-									<input class="duo-input" type="password" id="duo-password-input" value="********"
-										   disabled/>
-								</div>
-							</div>
-						</div>
 					</div>
 
 					<div class="duo-panel" id="duo-more">
@@ -301,21 +289,18 @@ function duo_render_admin_page() {
 
 				<footer class="duo-footer">
 					<div class="duo-footer__links">
-						<a class="duo-footer__link" href="#privacy"><?php echo esc_html__( 'Privacy', 'duo' ); ?></a>
-						<a class="duo-footer__link" href="#terms"><?php echo esc_html__( 'Terms', 'duo' ); ?></a>
-						<a class="duo-footer__link"
-						   href="#investors"><?php echo esc_html__( 'INVESTORS', 'duo' ); ?></a>
-						<a class="duo-footer__link" href="#careers"><?php echo esc_html__( 'Careers', 'duo' ); ?></a>
-						<a class="duo-footer__link"
-						   href="#guidelines"><?php echo esc_html__( 'Guidelines', 'duo' ); ?></a>
-						<a class="duo-footer__link" href="#help"><?php echo esc_html__( 'Help', 'duo' ); ?></a>
 						<a class="duo-footer__link" href="#about"><?php echo esc_html__( 'About', 'duo' ); ?></a>
 						<a class="duo-footer__link" href="#blog"><?php echo esc_html__( 'Blog', 'duo' ); ?></a>
-					</div>
-					<div class="duo-footer__meta">
-						<span class="duo-footer__text"><?php echo esc_html__( 'efficacy', 'duo' ); ?></span>
-						<a class="duo-footer__link"
-						   href="mailto:<?php echo esc_attr( 'hello@designdrops.io' ); ?>"><?php echo esc_html__( 'hello@designdrops.io', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#schools"><?php echo esc_html__( 'Schools', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#apps"><?php echo esc_html__( 'Apps', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#store"><?php echo esc_html__( 'Store', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#efficacy"><?php echo esc_html__( 'Efficacy', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#help"><?php echo esc_html__( 'Help', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#guidelines"><?php echo esc_html__( 'Guidelines', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#careers"><?php echo esc_html__( 'Careers', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#investors"><?php echo esc_html__( 'Investors', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#terms"><?php echo esc_html__( 'Terms', 'duo' ); ?></a>
+						<a class="duo-footer__link" href="#privacy"><?php echo esc_html__( 'Privacy', 'duo' ); ?></a>
 					</div>
 				</footer>
 			</main>
@@ -348,7 +333,8 @@ function duo_render_admin_page() {
 						   href="#duo-password"><?php echo esc_html__( 'Password', 'duo' ); ?></a>
 						<a class="duo-nav__item"
 						   href="#duo-courses"><?php echo esc_html__( 'Manage Courses', 'duo' ); ?></a>
-						<a class="duo-nav__item duo-nav__item-button" href="#duo-account"><?php echo esc_html__( 'Account', 'duo' ); ?></a>
+						<a class="duo-nav__item duo-nav__item-button"
+						   href="#duo-account"><?php echo esc_html__( 'Account', 'duo' ); ?></a>
 					</nav>
 				</div>
 			</aside>
