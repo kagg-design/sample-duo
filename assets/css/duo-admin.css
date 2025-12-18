@@ -22,19 +22,124 @@
 
 .duo-admin .duo-layout {
   display: grid;
-  grid-template-columns: 568px 369px;
+  grid-template-columns: 256px 568px 369px;
   gap: 20px 40px;
   align-items: start;
-  max-width: 1000px;
+  max-width: 1233px;
   margin-top: 36px;
 }
 
-.duo-admin .duo-content {
+.duo-admin .duo-navigation {
   grid-column: 1;
+  grid-row: 2;
+  width: 256px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.duo-admin .duo-navigation__inner {
+  width: 222px;
+  margin: 0 auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.duo-admin .duo-navigation__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.duo-admin .duo-navigation__item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: 222px;
+  height: 52px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.duo-admin .duo-navigation__item:hover {
+  background: #f6f7f8;
+}
+
+.duo-admin .duo-navigation__text {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #777;
+  line-height: 25px;
+}
+
+.duo-admin .duo-navigation__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  flex: 0 0 auto;
+}
+
+.duo-admin .duo-navigation__icon--learn {
+  background: url('../images/icon-learn.svg');
+}
+
+.duo-admin .duo-navigation__icon--practice {
+	background: url('../images/icon-practice.svg');
+}
+
+.duo-admin .duo-navigation__icon--leaderboards {
+	background: url('../images/icon-leaderboards.svg');
+}
+
+.duo-admin .duo-navigation__icon--shop {
+	background: url('../images/icon-shop.svg');
+}
+
+.duo-admin .duo-navigation__icon--profile {
+	background: url('../images/icon-profile.svg');
+}
+
+.duo-admin .duo-navigation__icon--more {
+	background: url('../images/icon-more.svg');
+}
+
+.duo-admin .duo-navigation__notification {
+  position: absolute;
+  left: 40px;
+  top: 8px;
+  width: 11px;
+  height: 11px;
+  border-radius: 6px;
+  background: var(--duo-danger);
+  border: 2px solid #fff;
+  box-sizing: border-box;
+}
+
+.duo-admin .duo-navigation__logo {
+  width: 128px;
+  height: 30px;
+  background: url('../images/logo.svg');
+  border-radius: 8px;
+  align-self: center;
+  margin-left:  32px;
+}
+
+.duo-admin .duo-content {
+  grid-column: 2;
 }
 
 .duo-admin .duo-menu {
-  grid-column: 2;
+  grid-column: 3;
 }
 
 .duo-admin .duo-card,
@@ -127,6 +232,7 @@
   margin: 0;
   padding: 0 22px;
   align-self: center;
+  grid-column: 2;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   font-size: 23px;
   font-weight: 700;
@@ -351,7 +457,35 @@
   width: max-content;
   justify-self: right;
   align-self: center;
+  grid-column: 3;
   text-transform: uppercase;
+}
+
+@media (max-width: 1100px) {
+  .duo-admin .duo-layout {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .duo-admin .duo-navigation,
+  .duo-admin .duo-content,
+  .duo-admin .duo-menu,
+  .duo-admin .duo-title,
+  .duo-admin .duo-button--muted {
+    grid-column: 1;
+  }
+
+  .duo-admin .duo-navigation {
+    grid-row: auto;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .duo-admin .duo-navigation__inner {
+    width: 100%;
+    min-height: auto;
+  }
 }
 
 .duo-admin .duo-actions {

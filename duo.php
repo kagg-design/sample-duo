@@ -100,7 +100,7 @@ function duo_admin_enqueue_assets( $hook_suffix ) {
 
 	wp_enqueue_style(
 		'duo-admin',
-		plugin_dir_url( __FILE__ ) . 'assets/duo-admin.css',
+		plugin_dir_url( __FILE__ ) . 'assets/css/duo-admin.css',
 		[],
 		'1.0.0'
 	);
@@ -141,10 +141,42 @@ function duo_render_admin_page() {
 	?>
 	<div class="wrap duo-admin">
 		<div class="duo-layout">
+			<div class="duo-navigation__logo" aria-hidden="true"></div>
 			<h1 class="duo-title"><?php echo esc_html__( 'Account', 'duo' ); ?></h1>
 			<button type="submit" form="duo-settings-form" class="duo-button duo-button--muted">
 				<?php echo esc_html__( 'Save changes', 'duo' ); ?>
 			</button>
+			<nav class="duo-navigation" aria-label="<?php echo esc_attr__( 'Primary navigation', 'duo' ); ?>">
+				<div class="duo-navigation__inner">
+					<div class="duo-navigation__links">
+						<a class="duo-navigation__item" href="#duo-learn">
+							<span class="duo-navigation__icon duo-navigation__icon--learn" aria-hidden="true"></span>
+							<span class="duo-navigation__text"><?php echo esc_html__( 'Learn', 'duo' ); ?></span>
+						</a>
+						<a class="duo-navigation__item" href="#duo-practice">
+							<span class="duo-navigation__icon duo-navigation__icon--practice" aria-hidden="true"></span>
+							<span class="duo-navigation__notification" aria-hidden="true"></span>
+							<span class="duo-navigation__text"><?php echo esc_html__( 'Practice', 'duo' ); ?></span>
+						</a>
+						<a class="duo-navigation__item" href="#duo-leaderboards">
+							<span class="duo-navigation__icon duo-navigation__icon--leaderboards" aria-hidden="true"></span>
+							<span class="duo-navigation__text"><?php echo esc_html__( 'Leaderboards', 'duo' ); ?></span>
+						</a>
+						<a class="duo-navigation__item" href="#duo-shop">
+							<span class="duo-navigation__icon duo-navigation__icon--shop" aria-hidden="true"></span>
+							<span class="duo-navigation__text"><?php echo esc_html__( 'Shop', 'duo' ); ?></span>
+						</a>
+						<a class="duo-navigation__item" href="#duo-profile">
+							<span class="duo-navigation__icon duo-navigation__icon--profile" aria-hidden="true"></span>
+							<span class="duo-navigation__text"><?php echo esc_html__( 'Profile', 'duo' ); ?></span>
+						</a>
+						<a class="duo-navigation__item" href="#duo-more">
+							<span class="duo-navigation__icon duo-navigation__icon--more" aria-hidden="true"></span>
+							<span class="duo-navigation__text"><?php echo esc_html__( 'More', 'duo' ); ?></span>
+						</a>
+					</div>
+				</div>
+			</nav>
 			<main class="duo-content" aria-label="<?php echo esc_attr__( 'Account settings', 'duo' ); ?>">
 				<form id="duo-settings-form" class="duo-form" method="post"
 					  action="<?php echo esc_url( $form_action ); ?>" enctype="multipart/form-data">
